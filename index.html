@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste</title>
+    <script src="Assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Tabela -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Anime</th>
+          <th>Status</th>
+          <th>Ep</th>
+          <th>Data de lançamento</th>
+        </tr>
+      </thead>
+      <tbody id="animeList"></tbody>
+    </table>
+    <input type="reset" value="Remover por Id" onclick="excluirById()" />
+    <input type="number" id="removeId" placeholder="Id..." />
+    <input type="button" value="Limpar lista" onclick="limparTudo()" />
+
+    <!-- Tabela -->
+
+    <br /><br /><br /><br /><br />
+
+    <!-- Form -->
+
+    <form id="animeInfoForm">
+      <label for="name">Insira o nome: </label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Por favor insira o nome do anime..."
+        required
+      />
+
+      <br />
+
+      <label for="link">Insira o link:</label>
+      <input
+        type="url"
+        id="link"
+        placeholder="Insira o link para a página do anime..."
+      />
+
+      <br />
+
+      <label for="statusLancamento">Status de lançamento</label>
+      <select onchange="verificarSTLancamento()" id="statusLancamento">
+        <option value=""></option>
+        <option value="">completo</option>
+        <option value="lancando">Em lançamento</option>
+        <option value="breve">Em breve</option>
+      </select>
+
+      <br />
+
+      <span id="spanPutDateLancando">
+        <label for="diaDeLancamentoEp">Selecione o dia de lançamento:</label>
+        <select id="diaDeLancamentoEp">
+          <option value=""></option>
+          <option value="Todo sábado">Todo sábado</option>
+          <option value="Todo domingo">Todo domingo</option>
+          <option value="Toda segunda">Toda segunda</option>
+          <option value="Toda terça">Toda terça</option>
+          <option value="Toda quarta">Toda quarta</option>
+          <option value="Toda quinta">Toda quinta</option>
+          <option value="Toda sexta">Toda sexta</option>
+        </select>
+      </span>
+
+      <span id="spanPutDateBreve">
+        <label for="dataDeLancamento">Selecione a data de lançamento:</label>
+        <input type="date" id="dataDeLancamento" />
+      </span>
+
+      <label for="statusAcompanhamento">Selecione o status do anime</label>
+      <select id="statusAcompanhamento" required>
+        <option value=""></option>
+        <option value="Assistindo">Assistindo</option>
+        <option value="Pretendo assistir">Pretendo assistir</option>
+        <option value="Hiato">Hiato</option>
+        <option value="Dropado">Dropei</option>
+      </select>
+
+      <br />
+
+      <label for="epAtual">Forneça o epsódio em que você está</label>
+      <input
+        type="number"
+        id="epAtual"
+        placeholder="Forneça o número do ep..."
+        min="0"
+        max="2000"
+      />
+
+      <br />
+
+      <input type="submit" value="Adicionar" />
+      <input type="reset" value="Limpar" onclick="verificarSTLancamento()" />
+
+      <input type="button" value="Modificar por Id" id="modById" onclick="modficarById()" />
+      <input
+        type="number"
+        id="modId"
+        placeholder="Insira o Id..."
+        min="0"
+      />
+    </form>
+
+    <!-- Form -->
+  </body>
+</html>
