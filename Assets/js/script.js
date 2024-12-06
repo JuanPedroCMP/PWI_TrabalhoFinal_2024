@@ -9,8 +9,7 @@ function excluirById() {
 
   dataAllForms.splice(idAt, 1);
 
-  for (let i = 0; i < dataAllForms.length; i++)
-  {
+  for (let i = 0; i < dataAllForms.length; i++) {
     dataAllForms[i].id = i;
   }
 
