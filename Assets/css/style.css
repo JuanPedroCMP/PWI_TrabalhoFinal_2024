@@ -1,0 +1,121 @@
+.background{
+    background-color: rgb(30, 30, 30);
+    color:orangered;
+    overflow-x: hidden;
+}
+
+.title{
+    margin-left: 5%;
+    text-align: center;
+    width:40%;
+    border: solid;
+    border-radius:8%;
+    background-color: rgb(30, 30, 30);
+}
+
+.paragraph{
+    text-align: center;
+    width:40%;
+    border: solid;
+    border-radius:8%;
+    background-color: rgb(30, 30, 30);
+    margin-right: 5%;
+}
+.title_screen{
+    background: url(../img/background.jpeg) no-repeat;
+    background-size: 100vw 100vh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: solid 2px rgb(44, 12, 0);
+
+    /* border:solid; */
+    width:100vw;
+    height:100vh; 
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-left: 30vw solid transparent;
+    border-right: 30vw solid transparent;
+    border-bottom: 50vh solid rgba(255, 68, 0, 0.598);
+  }
+
+  .triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 30vw solid transparent;
+    border-right: 30vw solid transparent;
+    border-top: 50vh solid rgba(255, 68, 0, 0.598);
+  }
+
+.text_box{
+    padding-left: 5%;
+}
+.center_inputs{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.inputs
+{
+    border: solid;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    padding: 3%;
+    width: 75%;
+}
+
+.textInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+}
+
+.otherInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:3em;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.tab
+{
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    color: orangered
+}
+
+.tab_in
+{
+    width:70%;
+    color: orangered
+}
+
+.tab_in_text{
+    text-align: center;
+    color: orangered
+}
+

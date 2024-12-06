@@ -88,6 +88,7 @@ function inserirNaTabela() {
 
   dataTabAnime.forEach((linha) => {
     let tr = document.createElement("tr");
+    tr.className = "tab_in_text";
 
     let colID = document.createElement("td");
     colID.innerHTML = linha.id;

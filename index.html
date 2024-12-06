@@ -1,119 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teste</title>
-    <script src="Assets/js/script.js" defer></script>
-  </head>
-  <body>
-    <!-- Tabela -->
 
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Anime</th>
-          <th>Status</th>
-          <th>Ep</th>
-          <th>Data de lançamento</th>
-        </tr>
-      </thead>
-      <tbody id="animeList"></tbody>
-    </table>
-    <input type="reset" value="Remover por Id" onclick="excluirById()" />
-    <input type="number" id="removeId" placeholder="Id..." />
-    <input type="button" value="Limpar lista" onclick="limparTudo()" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de animes para assistir</title>
+  <link rel="stylesheet" href="Assets/css/style.css">
+  <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+  <script src="Assets/js/script.js" defer></script>
+</head>
 
-    <!-- Tabela -->
+<body class="background">
 
-    <br /><br /><br /><br /><br />
+  <div class="title_screen">
+    <h1 class="title">
+      Título
+    </h1>
+    <section>
+      <div class="triangle-right"></div>
+      <div class="triangle-left"></div>
+    </section>
+    <p class="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis labore error magnam
+      aliquam, vel, quae laborum temporibus fuga neque dicta ad sunt aperiam laboriosam dolore atque esse ducimus magni!
+      Facere?</p>
+  </div>
 
-    <!-- Form -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <ul class="navbar-nav">
+      <a class="navbar-brand">Logo</a>
+      <li class="nav-item">
+        <a class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Lista</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Forms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Github</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Ajuda</a>
+      </li>
+    </ul>
+  </nav>
 
-    <form id="animeInfoForm">
-      <label for="name">Insira o nome: </label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Por favor insira o nome do anime..."
-        required
-      />
+  <!-- Tabela -->
+  <div class="tab">
+    <section class="tab_in">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="tab_in_text">
+            <th>Id</th>
+            <th>Anime</th>
+            <th>Status</th>
+            <th>Ep</th>
+            <th>Data de lançamento</th>
+          </tr>
+        </thead>
+        <tbody id="animeList"></tbody>
+      </table>
+      <div class="buttons">
+          <input type="reset" class="btn btn-primary" value="Remover por Id" onclick="excluirById()" />
+          <input type="number" class="text_box" id="removeId" placeholder="Coloque o Id aqui..." />
+        <input type="button" class="btn btn-danger" value="Limpar lista" onclick="limparTudo()" />
+      </div>
+    </section>
+  </div>\
 
-      <br />
+  <!-- Tabela -->
 
-      <label for="link">Insira o link:</label>
-      <input
-        type="url"
-        id="link"
-        placeholder="Insira o link para a página do anime..."
-      />
+  <br /><br />
 
-      <br />
+  <!-- Form -->
 
-      <label for="statusLancamento">Status de lançamento</label>
-      <select onchange="verificarSTLancamento()" id="statusLancamento">
-        <option value=""></option>
-        <option value="">completo</option>
-        <option value="lancando">Em lançamento</option>
-        <option value="breve">Em breve</option>
-      </select>
+  <form id="animeInfoForm">
+    <div class="center_inputs">
+      <section class="inputs">
+          <div class="textInput">
+            <label for="name">Insira o nome: </label>
+            <input type="text" class="text_box" id="name" placeholder="Por favor insira o nome do anime..." required />
+            
+            <label for="link">Insira o link:</label>
+            <input type="url" class="text_box" id="link" placeholder="Insira o link para a página do anime..." />
+            
+            <label for="statusLancamento">Status de lançamento</label>
+            <select onchange="verificarSTLancamento()" id="statusLancamento">
+              <option value=""></option>
+              <option value="">completo</option>
+              <option value="lancando">Em lançamento</option>
+              <option value="breve">Em breve</option>
+            </select>
+          </div>
 
-      <br />
+          <div class="otherInput">
+            <span id="spanPutDateLancando">
+              <label for="diaDeLancamentoEp">Selecione o dia de lançamento:</label>
+              <select id="diaDeLancamentoEp">
+                <option value=""></option>
+                <option value="Todo sábado">Todo sábado</option>
+                <option value="Todo domingo">Todo domingo</option>
+                <option value="Toda segunda">Toda segunda</option>
+                <option value="Toda terça">Toda terça</option>
+                <option value="Toda quarta">Toda quarta</option>
+                <option value="Toda quinta">Toda quinta</option>
+                <option value="Toda sexta">Toda sexta</option>
+              </select>
+          </span>
+          
+          <span id="spanPutDateBreve">
+            <label for="dataDeLancamento">Selecione a data de lançamento:</label>
+            <input type="date" class="text_box" id="dataDeLancamento" />
+          </span>
+          
+          <label for="statusAcompanhamento">Selecione o status do anime</label>
+          <select id="statusAcompanhamento" required>
+            <option value=""></option>
+            <option value="Assistindo">Assistindo</option>
+            <option value="Pretendo assistir">Pretendo assistir</option>
+            <option value="Hiato">Hiato</option>
+            <option value="Dropado">Dropei</option>
+          </select>
+          
+          <label for="epAtual">Forneça o epsódio em que você está</label>
+          <input type="number" class="text_box" id="epAtual" placeholder="Forneça o número do ep..." min="0"
+          max="2000" />
+        </div>
+      </section>
+          
+        <div class="buttons">
+          <input type="submit" class="btn btn-success" value="Adicionar" />
+          <input type="reset" class="btn btn-danger" value="Limpar" onclick="verificarSTLancamento()" />
+          
+          <input type="button" class="btn btn-primary" value="Modificar por Id" id="modById" onclick="modficarById()" />
+          <input type="number" id="modId" placeholder="Insira o Id..." min="0" />
+        </div>
+    </div>
+  </form>
 
-      <span id="spanPutDateLancando">
-        <label for="diaDeLancamentoEp">Selecione o dia de lançamento:</label>
-        <select id="diaDeLancamentoEp">
-          <option value=""></option>
-          <option value="Todo sábado">Todo sábado</option>
-          <option value="Todo domingo">Todo domingo</option>
-          <option value="Toda segunda">Toda segunda</option>
-          <option value="Toda terça">Toda terça</option>
-          <option value="Toda quarta">Toda quarta</option>
-          <option value="Toda quinta">Toda quinta</option>
-          <option value="Toda sexta">Toda sexta</option>
-        </select>
-      </span>
+  <!-- Form -->
+</body>
 
-      <span id="spanPutDateBreve">
-        <label for="dataDeLancamento">Selecione a data de lançamento:</label>
-        <input type="date" id="dataDeLancamento" />
-      </span>
-
-      <label for="statusAcompanhamento">Selecione o status do anime</label>
-      <select id="statusAcompanhamento" required>
-        <option value=""></option>
-        <option value="Assistindo">Assistindo</option>
-        <option value="Pretendo assistir">Pretendo assistir</option>
-        <option value="Hiato">Hiato</option>
-        <option value="Dropado">Dropei</option>
-      </select>
-
-      <br />
-
-      <label for="epAtual">Forneça o epsódio em que você está</label>
-      <input
-        type="number"
-        id="epAtual"
-        placeholder="Forneça o número do ep..."
-        min="0"
-        max="2000"
-      />
-
-      <br />
-
-      <input type="submit" value="Adicionar" />
-      <input type="reset" value="Limpar" onclick="verificarSTLancamento()" />
-
-      <input type="button" value="Modificar por Id" id="modById" onclick="modficarById()" />
-      <input
-        type="number"
-        id="modId"
-        placeholder="Insira o Id..."
-        min="0"
-      />
-    </form>
-
-    <!-- Form -->
-  </body>
 </html>
